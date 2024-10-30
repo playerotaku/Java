@@ -1,24 +1,25 @@
-public class Admin extends Usuario{
+public class Admin extends Usuario {
+
 
     public Admin(int idUsuario,String nome,String email,String senha ){
         super(idUsuario,nome,email,senha);
     }
-
     //Produto
-    public static void cadastrarProduto(String nome,String descricao,double preco){
-        Dados.salvarProduto(new Produto(Dados.obterProdutos().size()+1,nome,descricao,preco));
+    public void cadastrarProduto(String nome,String descricao,double preco){
+        Dados.salvarProduto(nome,descricao,preco);
+
     }
 
 
-    public void atualizaPrecoProduto(int id, double preco){
-        Produto precoAntigo = Dados.obterProdutoPorId(id);
+    public void atualizaPrecoProduto(String nome, double preco){
+        Produto precoAntigo = Dados.obterProdutoPorNome(nome);
         precoAntigo.setPreco(preco);
-        Dados.atualizarProduto(id, precoAntigo);
+        Dados.atualizarProduto(nome, precoAntigo);
     }
 
 
     //Cliente
-    public void cadastrarCliente(String nome,String email,String senha){
+    public static void cadastrarCliente(String nome,String email,String senha){
         Dados.salvarCliente(nome,email,senha);
     }
 

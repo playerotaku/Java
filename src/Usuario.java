@@ -6,6 +6,7 @@ abstract class Usuario implements Serializable  {
     private String email;
     private String senha;
 
+
     public Usuario(int idUsuario, String nome, String email, String senha) {
         this.idUsuario = idUsuario;
         this.nome = nome;
@@ -17,4 +18,5 @@ abstract class Usuario implements Serializable  {
     public int getId(){return idUsuario;}
     public String getEmail(){return email;}
     public String getSenha(){return senha;}
+
 }

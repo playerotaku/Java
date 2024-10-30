@@ -8,5 +8,9 @@ public class Cliente extends Usuario{
     public Carrinho getCarrinho(){
         return carrinho;
     }
+    public void adicionaProdutoCarrinho(Produto prod){
+        carrinho.adicionarProduto(prod);
+    }
+
 
 }
